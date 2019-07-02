@@ -13,16 +13,13 @@ class Parser
     @file.each do |line|
       uri, ip = line.split(/\s/)
       @data[uri] << ip
-      #@data << line.split(' ')
     end
-    @data
-  end
-
-  def selector(log)
-    @data[log]
   end
 
   def most_views
+    @data.each_with_object({}) do |(key, value), list|
+      list[key] = value.length
+      end
   end
 
 end

@@ -21,9 +21,25 @@ RSpec.describe Parser do
       expect(test_parse.data).to eq(test_data)
     end
   end
-  # it 'Returns all data from log file' do
-  #   expect(web_parser.parse).to start_with(["/contact", "184.123.665.067"])
-  #   expect(web_parser.data.length).to eq(499)
-  # end
+  
+
+  describe '#most_views' do
+
+    before { test_parse.parse }
+
+      let(:most_viewed_results) do
+      {
+        '/about'   => 3,
+        '/index' => 1,
+        '/contact'    => 2,
+        '/home'   => 2,
+        '/help_page' => 1
+      }
+    end
+
+    it 'Should group visits by different uri' do
+      expect(test_parse.most_views).to eq(most_viewed_results)
+    end
+  end
 
 end
