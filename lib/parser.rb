@@ -22,4 +22,10 @@ class Parser
       end
   end
 
+  def most_unique_views
+    @data.each_with_object({}) do |(key, value), list|
+      list[key] = value.uniq.length
+      end
+  end
+
 end
