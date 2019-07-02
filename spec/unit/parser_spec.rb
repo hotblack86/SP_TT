@@ -28,9 +28,9 @@ RSpec.describe Parser do
       let(:most_viewed_results) do
       {
         '/about'   => 4,
-        '/index' => 1,
-        '/contact'    => 2,
         '/home'   => 3,
+        '/contact'    => 2,
+        '/index' => 1,
         '/help_page' => 1
       }
     end
