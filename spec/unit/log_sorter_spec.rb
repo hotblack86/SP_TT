@@ -34,7 +34,7 @@ RSpec.describe LogSorter do
       }
     end
 
-    it 'should order url views with unique ip count' do
+    it 'Should group unique visits by different uri' do
       expect(subject.most_unique_views).to eq(most_viewed_unique_results)
     end
   end

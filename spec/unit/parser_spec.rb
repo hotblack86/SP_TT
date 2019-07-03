@@ -23,4 +23,20 @@ RSpec.describe Parser do
       expect(subject.data).to eq(test_data)
     end
   end
+
+  # describe '#ordered_views' do
+  #   let(:views_table) do
+  #     "
+  #       '/about'  4 Visits,
+  #       '/home'  3 Visits,
+  #       '/contact'  2 Visits,
+  #       '/index'  1 Visits,
+  #       '/help_page'  1 Visits
+  #     "
+  #   end
+
+  #   it 'Should display most visited uri in order' do
+  #     expect(subject.ordered_views).to eq(views_table)
+  #   end
+  # end
 end
