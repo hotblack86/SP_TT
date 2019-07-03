@@ -1,17 +1,18 @@
-require "parser.rb"
-require "log_sorter.rb"
+# frozen_string_literal: true
+
+require 'parser.rb'
+require 'log_sorter.rb'
 
 RSpec.describe LogSorter do
-  let (:subject) { Parser.new("./spec/test_data.log") }
+  let (:subject) { Parser.new('./spec/test_data.log') }
   before { subject.parse }
 
   describe '#most_views' do
-
     let(:most_viewed_results) do
       {
-        '/about'   => 4,
-        '/home'   => 3,
-        '/contact'    => 2,
+        '/about' => 4,
+        '/home' => 3,
+        '/contact' => 2,
         '/index' => 1,
         '/help_page' => 1
       }
@@ -23,12 +24,11 @@ RSpec.describe LogSorter do
   end
 
   describe '#most_unique_views' do
-    
     let(:most_viewed_unique_results) do
       {
-        '/about'   => 3,
-        '/contact'    => 2,
-        '/home'   => 2,
+        '/about' => 3,
+        '/contact' => 2,
+        '/home' => 2,
         '/help_page' => 1,
         '/index' => 1
       }

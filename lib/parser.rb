@@ -1,5 +1,9 @@
-require_relative "log_sorter.rb"
+# frozen_string_literal: true
 
+require_relative 'log_sorter.rb'
+
+# Parser class is used to parse a given file
+# and store files data in a hash
 class Parser
   include LogSorter
 
@@ -18,23 +22,16 @@ class Parser
   end
 
   def ordered_views
-    logs = most_views().sort_by {|a,b| -b}
+    logs = most_views.sort_by { |_a, b| -b }
     logs.each.with_index(1) do |(page, count), index|
       puts "| #{index} | #{page&.ljust(18)} | #{count} Visits"
     end
   end
 
   def ordered_unique_views
-    logs = most_unique_views().sort_by {|a,b| -b}
+    logs = most_unique_views.sort_by { |_a, b| -b }
     logs.each.with_index(1) do |(page, count), index|
       puts "| #{index} | #{page&.ljust(18)} | #{count} Unique Visits"
     end
   end
-
-
-  
-  
-  
-
-
 end
