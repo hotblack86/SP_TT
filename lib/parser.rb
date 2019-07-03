@@ -23,6 +23,13 @@ class Parser
     end
   end
 
+  def ordered_unique_views
+    logs = most_unique_views().sort_by {|a,b| -b}
+    logs.each.with_index(1) do |(page, count), index|
+      puts "| #{index} | #{page&.ljust(18)} | #{count} visits"
+    end
+  end
+
   def most_views
     view_counter(is_unique: false).sort_by {|a,b| -b}.to_h
   end
