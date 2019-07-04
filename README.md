@@ -20,18 +20,25 @@ b. Returns the following:
 
 
 Installation
-- clone this repository  $ git clone git@github.com:hotblack86/SP_TT.git
+- clone this repository  
+> $ git clone git@github.com:hotblack86/SP_TT.git
 
-- go to repository folder  $ cd SP_TT
+- go to repository folder  
+> $ cd SP_TT
 
-- run  $ bundle install
+- run  
+> $ bundle install
 
 
 
 Usage
-- run the program with ruby  $ ruby main.rb webserver.log
+- run the program with ruby 
+> $ ruby main.rb webserver.log
+
+- run tests
+> $ rspec
 
 * webserver.log can be replaced with a log file of your choosing. You will receive an error message
 if you provide an invalid filepath or if you provide no arguement for the above command.
 
-- run tests  $ rspec
+
