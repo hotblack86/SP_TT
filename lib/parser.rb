@@ -10,7 +10,13 @@ class Parser
   attr_reader :data
 
   def initialize(file_path)
-    @file = File.open(file_path)
+    if File.exists?(file_path)
+      @file = File.open(file_path)
+    else
+      puts "Sorry, #{file_path} can't be found."
+      exit
+    end
+    
     @data = Hash.new { |hash, key| hash[key] = [] }
   end
 
