@@ -4,7 +4,7 @@ require 'parser.rb'
 
 RSpec.describe Parser do
   let (:subject) { Parser.new('./spec/test_data.log') }
-  
+
   describe '#parse' do
     let(:test_data) do
       {
@@ -22,5 +22,5 @@ RSpec.describe Parser do
       subject.parse
       expect(subject.data).to eq(test_data)
     end
-  end  
+  end
 end

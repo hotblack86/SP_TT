@@ -10,7 +10,7 @@ class Parser
   attr_reader :data, :file
 
   def initialize(file_path)
-    File.exists?(file_path) ? @file = File.open(file_path) : file_missing_error
+    File.exist?(file_path) ? @file = File.open(file_path) : file_missing_error
     @data = Hash.new { |hash, key| hash[key] = [] }
   end
 
@@ -31,18 +31,17 @@ class Parser
     displayer(unique: true)
   end
 
-private
+  private
 
   def displayer(unique:)
     @logs.each.with_index(1) do |(page, count), index|
-      unique ? text = "Unique Visits" : text = "Visits" 
+      text = unique ? 'Unique Visits' : 'Visits'
       puts "| #{index} | #{page&.ljust(18)} | #{count} #{text}"
     end
   end
 
   def file_missing_error
-    puts "Sorry, file not found. Please enter a valid filepath."
+    puts 'Sorry, file not found. Please enter a valid filepath.'
     exit
-  end  
-
+  end
 end
