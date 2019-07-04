@@ -18,6 +18,13 @@ b. Returns the following:
 /about/2 8 unique views /index 5 unique views etc...
 
 
+Approach:-
+
+- Use TDD to build the project throughout. 
+- Refactor after every test pass where possible, to keep methods skinny and code dry.
+- Build a test log file to simulate parsing of webserver.log
+- Installed simplecov gem to maintain test coverage and rubocop gem for code linting.
+
 
 Installation
 - clone this repository  > $ git clone git@github.com:hotblack86/SP_TT.git
