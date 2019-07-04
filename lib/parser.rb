@@ -7,7 +7,7 @@ require_relative 'log_sorter.rb'
 class Parser
   include LogSorter
 
-  attr_reader :data
+  attr_reader :data, :file
 
   def initialize(file_path)
     File.exists?(file_path) ? @file = File.open(file_path) : file_missing_error

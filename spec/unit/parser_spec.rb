@@ -4,8 +4,7 @@ require 'parser.rb'
 
 RSpec.describe Parser do
   let (:subject) { Parser.new('./spec/test_data.log') }
-  before { subject.parse }
-
+  
   describe '#parse' do
     let(:test_data) do
       {
@@ -20,23 +19,8 @@ RSpec.describe Parser do
     end
 
     it 'Should iterate over the file and push into empty data hash' do
+      subject.parse
       expect(subject.data).to eq(test_data)
     end
-  end
-
-  # describe '#ordered_views' do
-  #   let(:views_table) do
-  #     "
-  #       '/about'  4 Visits,
-  #       '/home'  3 Visits,
-  #       '/contact'  2 Visits,
-  #       '/index'  1 Visits,
-  #       '/help_page'  1 Visits
-  #     "
-  #   end
-
-  #   it 'Should display most visited uri in order' do
-  #     expect(subject.ordered_views).to eq(views_table)
-  #   end
-  # end
+  end  
 end
